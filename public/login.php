@@ -30,10 +30,10 @@
 	</header>
 	<main class="flex a-center vh9 jfsa">
 		<img class="picture" src="../media/photos.png" alt="">
-		<form action="#" class="flex col a-center background">
-			<input class="m-15-b" type="text" placeholder="Логин или Email">
-			<input class="m-15-b" type="password" placeholder="Пароль">
-			<input class="m-15-b w100" type="submit" value="Войти">
+		<form class="flex col a-center background" action="../php/authorization.php" method="POST">
+			<input class="m-15-b" type="text" placeholder="Логин или Email" name="login">
+			<input class="m-15-b" type="password" placeholder="Пароль" name="password">
+			<input class="m-15-b w100" type="submit" value="Войти" name="submit">
 			<div class="flex col a-center">
 				<p>Не зарегистрированы?</p>
 				<a class="link" href="./registration.php">Зарегистрироваться</a>
