@@ -1,0 +1,18 @@
+body{
+	flex-grow: 1;
+}
+
+main{
+	flex-grow: 1;
+	padding: 30px;
+}
+
+main .item{
+	width: 240px;
+	height: 320px;
+	margin: 0 15px 15px 0;
+}
+
+main .item img{
+	width: 100%;
+}
