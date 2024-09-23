@@ -4,14 +4,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/style_2.css">
 	<link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
 	<header class="background">
-        <div class="flex header1">
+        <div class="flex header_top">
         	<?php
-        	include '../include/header1.php';
+        	include '../include/header_top.php';
         	?>
 			<div class="icons flex wrap">
 	        	<a href="#" class="flex col a-center m-30-r">

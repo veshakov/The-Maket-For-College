@@ -1,0 +1,47 @@
+/* *{
+    border: 1px solid black; 
+}*/
+html, body{
+    height: 100%;
+}
+
+ .photo{
+    width: 300px;
+    margin:30px auto;
+    
+ }
+form{
+    margin: 35px;
+    /* background: white; */
+    padding: 20px;
+    border-radius: 10px;
+}
+form input{
+    padding: 5px 15px 5px 15px;
+	font-size: 32px;
+	text-align: center;
+    box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.219) ;
+    border: 0;
+    border-radius: 10px;
+}
+.button_auth{
+    color: white;
+    background: rgb(82, 131, 204);
+    transition: 0.1s;
+    padding: 5px 35px;
+}
+.button_auth:hover{
+    color: rgb(82, 131, 204);
+    background: white;
+    transition: 0.2s;
+    padding: 5px 40px;
+
+}
+.section{
+    margin: auto;
+    border-radius: 10px;
+    background: url(../media/gradient.png), rgba(219, 217, 215, 0.349);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

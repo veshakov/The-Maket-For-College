@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style_2.css">
 </head>
 <body>
     <header class="background">
-        <div class="flex header1">
+        <div class="flex header_top">
             <div class="flex wrap">
                 <div class="flex col a-center a-logo">
                     <img class="logo" src="../logo/logotype.svg" alt="Лого">
@@ -23,19 +23,19 @@
             <div class="icons flex wrap">
                 <a href="#" class="flex col a-center m-30-r">
                     <img src="./media/search.svg" alt="Поиск">
-                    <div class="underline"></div>
+
                 </a>
-                <a href="./public/login.php" class="flex col a-center m-30-r">
+                <a href="./public/login-2.php" class="flex col a-center m-30-r">
                     <img src="./media/user.svg" alt="Профиль">
-                    <div class="underline"></div>
+
                 </a>
                 <a href="#" class="flex col a-center">
                     <img src="./media/bag.svg" alt="Корзина">
-                    <div class="underline"></div>
+
                 </a>
             </div>
         </div>
-        <div class="header2 flex col a-center vh9">
+        <div class="header_block flex col a-center vh9">
             <div class="flex a-center h100">
                 <div class="text flex col">
                     <h1 class="m-25-b">Сохраняйте лучшие моменты своей жизни с камерой моментальной печати Filmax</h1>
