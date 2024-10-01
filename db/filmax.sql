@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 26 2024 г., 14:26
+-- Время создания: Окт 01 2024 г., 14:06
 -- Версия сервера: 8.0.19
 -- Версия PHP: 7.4.5
 
@@ -32,6 +32,15 @@ CREATE TABLE `categories` (
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Дамп данных таблицы `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`) VALUES
+(1, 'Фотоаппарат'),
+(2, 'Плёнка'),
+(3, 'Аксессуары');
+
 -- --------------------------------------------------------
 
 --
@@ -44,6 +53,15 @@ CREATE TABLE `cities` (
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Дамп данных таблицы `cities`
+--
+
+INSERT INTO `cities` (`id`, `id_coutry`, `name`) VALUES
+(1, 1, 'Лондон'),
+(2, 2, 'Москва'),
+(3, 3, 'Хельсинки');
+
 -- --------------------------------------------------------
 
 --
@@ -54,6 +72,15 @@ CREATE TABLE `countries` (
   `id` int NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `countries`
+--
+
+INSERT INTO `countries` (`id`, `name`) VALUES
+(1, 'Великобритания'),
+(2, 'Россия'),
+(3, 'Финляндия');
 
 -- --------------------------------------------------------
 
@@ -114,10 +141,18 @@ CREATE TABLE `products` (
   `catigories` int NOT NULL DEFAULT '1',
   `sales` int NOT NULL DEFAULT '0',
   `description` text NOT NULL,
-  `pquntity` int NOT NULL DEFAULT '0',
-  `visibility` tinyint(1) NOT NULL DEFAULT '1',
-  `suppliy` int NOT NULL
+  `quntity` int NOT NULL DEFAULT '0',
+  `visibility` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `products`
+--
+
+INSERT INTO `products` (`id`, `img`, `name`, `price`, `catigories`, `sales`, `description`, `quntity`, `visibility`) VALUES
+(1, NULL, 'Filmax Hello', 5900, 1, 0, 'Filmax Hello - фотоаппарат', 10, 1),
+(2, NULL, 'Filmax Start', 6900, 1, 0, 'Filmax Start - фотоаппарат старт', 10, 1),
+(3, NULL, 'Filmax Option', 8900, 1, 0, 'Filmax Option - фотоаппарат с дополнительными опциями', 15, 1);
 
 -- --------------------------------------------------------
 
@@ -130,6 +165,15 @@ CREATE TABLE `streets` (
   `id_sity` int NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `streets`
+--
+
+INSERT INTO `streets` (`id`, `id_sity`, `name`) VALUES
+(1, 2, 'Тверская улица'),
+(2, 3, 'Алексантеринкату'),
+(3, 1, 'Стрэнд');
 
 -- --------------------------------------------------------
 
@@ -224,7 +268,10 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `role`, `family`, `name`, `patronymic`, `email`, `login`, `password`) VALUES
 (1, 1, '', 'Тостер', '', 'email@example.com', 'toster1', '12345'),
 (2, 1, '', 'Тостер 2', '', 'email2@example.com', 'toster2', '123'),
-(3, 1, '', 'Стол', '', 'table01@examplo.lol', 'table0', '000');
+(3, 1, '', 'Стол', '', 'table01@examplo.lol', 'table0', '000'),
+(6, 1, 'Илий', 'Дмитрий', 'Сергеевич', 'dimailiy02@gmail.com', 'DimasYll', '123456gg'),
+(16, 0, '', 'admin', NULL, '', '111', '111'),
+(28, 1, '123', '123', ' ', '123', '123', '123');
 
 --
 -- Индексы сохранённых таблиц
@@ -281,7 +328,6 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `supplier` (`suppliy`),
   ADD KEY `catigories` (`catigories`);
 
 --
@@ -343,19 +389,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `cities`
 --
 ALTER TABLE `cities`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `countries`
 --
 ALTER TABLE `countries`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `message`
@@ -379,13 +425,13 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT для таблицы `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `streets`
 --
 ALTER TABLE `streets`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `suppliers`
@@ -415,7 +461,7 @@ ALTER TABLE `support-request`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
